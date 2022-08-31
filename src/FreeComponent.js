@@ -9,10 +9,7 @@ export default function FreeComponent() {
   // useEffect automatically executes once the page is fully loaded
   useEffect(() => {
     // set configurations for the API call here
-    const configuration = {
-      method: "get",
-      url: "https://nodejs-mongodb-auth-app.herokuapp.com/free-endpoint",
-    };
+    const configuration = { method: 'get', url: 'https://ga-summer-2022-hackathon.herokuapp.com/free-endpoint' };
 
     // make the API call
     axios(configuration)
