@@ -4,9 +4,10 @@ import axios from "axios";
 
 export default function Register() {
   // initial state
+  const [userName, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [register, setRegister] = useState(false);
+  // const [register, setRegister] = useState(false);
 
   const handleSubmit = (e) => {
     // prevent the form from refreshing the whole page
@@ -15,8 +16,9 @@ export default function Register() {
     // set configurations
     const configuration = {
       method: "post",
-      url: "https://nodejs-mongodb-auth-app.herokuapp.com/register",
+      url: "http://localhost:3000/register",
       data: {
+        userName,
         email,
         password,
       },
@@ -25,17 +27,31 @@ export default function Register() {
     // make the API call
     axios(configuration)
       .then((result) => {
-        setRegister(true);
+        console.log(result);
       })
       .catch((error) => {
-        error = new Error();
+        console.log(error);
       });
-  };
+    }
+  
 
   return (
     <>
       <h2>Register</h2>
       <Form onSubmit={(e) => handleSubmit(e)}>
+        {/* username */}
+        <Form.Group controlId="formBasicUsername">
+          <Form.Label>Username</Form.Label>
+          <Form.Control
+            type="userName"
+            name="userName"
+            value={userName}
+            onChange={(e) => setUserName(e.target.value)}
+            placeholder="Enter username"
+          />
+        </Form.Group>
+  
+  
         {/* email */}
         <Form.Group controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
@@ -70,11 +86,11 @@ export default function Register() {
         </Button>
 
         {/* display success message */}
-        {register ? (
+        {/* {register ? (
           <p className="text-success">You Are Registered Successfully</p>
         ) : (
           <p className="text-danger">You Are Not Registered</p>
-        )}
+        )} */}
       </Form>
     </>
   );
