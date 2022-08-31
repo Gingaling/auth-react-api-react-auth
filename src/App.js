@@ -1,4 +1,5 @@
 import { Switch, Route } from "react-router-dom";
+import './App.css';
 import { Container, Col, Row } from "react-bootstrap";
 import Account from "./Account";
 import FreeComponent from "./FreeComponent";

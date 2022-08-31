@@ -14,13 +14,7 @@ export default function AuthComponent() {
   // useEffect automatically executes once the page is fully loaded
   useEffect(() => {
     // set configurations for the API call here
-    const configuration = {
-      method: "get",
-      url: "https://nodejs-mongodb-auth-app.herokuapp.com/auth-endpoint",
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    };
+    const configuration = { method: 'get', url: 'https://react-auth-backend-api.herokuapp.com/auth-endpoint', headers: { Authorization: `Bearer ${token}` } };
 
     // make the API call
     axios(configuration)

@@ -17,7 +17,7 @@ export default function Login() {
     // set configurations
     const configuration = {
       method: "post",
-      url: "http://localhost:3000/login",
+      url: " https://react-auth-backend-api.herokuapp.com/login",
       data: {
         email,
         password,

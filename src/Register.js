@@ -16,7 +16,7 @@ export default function Register() {
     // set configurations
     const configuration = {
       method: "post",
-      url: "http://localhost:3000/register",
+      url: " https://react-auth-backend-api.herokuapp.com/register",
       data: {
         userName,
         email,
